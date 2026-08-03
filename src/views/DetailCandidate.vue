@@ -64,7 +64,7 @@ const post = computed(() =>
   const statutModal = ref(false)
 </script>
 
-<style>
+<style scoped>
 
   .main{
     width: 80%;
