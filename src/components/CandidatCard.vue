@@ -4,39 +4,30 @@
     <div class="candidatcard">
       <div>
         <p class="title">{{ props.post.name }}</p>
-        <p class="detail">{{ props.post.description }} - postulé le {{ props.post.creationDate.toLocaleDateString() }}</p>
+        <p class="description">{{ props.post.description }} - postulé le {{ props.post.creationDate.toLocaleDateString() }}</p>
+        <RouterLink :to="linkDetail" :params="props.post" class="details">Détails</RouterLink>
       </div>
-      <button v-if="props.post.statut === 'envoye'" class="envoye" @click="statutModal = true">Envoyée</button>
-      <button v-else-if="props.post.statut === 'entretien'" class="entretien" @click="statutModal = true">Entretien</button>
-      <button v-else-if="props.post.statut === 'accepte'" class="accepte" @click="statutModal = true">Acceptée</button>
-      <button v-else-if="props.post.statut === 'refuse'" class="refuse" @click="statutModal = true">Refusée</button>
-      <div v-if="statutModal" class="modal">
-        <div class="modal-content">
-          <h1>Modification de statut</h1>
-          <h2>Entreprise : {{ props.post.name }}</h2>
-          <p>Description : {{ props.post.description }}</p>
-          <h4>sélectionner le nouveau statut</h4>
-          <div>
-            <button class="envoye" @click="props.post.statut = 'envoye', statutModal = false, props.post.creationDate = new Date()">Envoyée</button>
-            <button class="entretien" @click="props.post.statut = 'entretien', statutModal = false, props.post.creationDate = new Date()">Entretien</button>
-            <button class="accepte" @click="props.post.statut = 'accepte', statutModal = false, props.post.creationDate = new Date()">Acceptée</button>
-            <button class="refuse" @click="props.post.statut = 'refuse', statutModal = false, props.post.creationDate = new Date()">Refusée</button>
-          </div>
-          <button @click="statutModal = false" class="close">annuler</button>
-        </div>
-      </div>
+      <span v-if="props.post.statut === 'envoye'" class="envoye">Envoyée</span>
+      <span v-else-if="props.post.statut === 'entretien'" class="entretien">Entretien</span>
+      <span v-else-if="props.post.statut === 'accepte'" class="accepte">Acceptée</span>
+      <span v-else-if="props.post.statut === 'refuse'" class="refuse">Refusée</span >
     </div>
   </div>
 </template>
 
 <script setup lang="ts">
 import type { Post } from '@/types/Post';
-import { ref } from 'vue';
+import { computed } from 'vue';
   const props = defineProps<{
     post: Post
   }>()
 
-  const statutModal = ref(false)
+
+
+  const linkDetail = computed(()=> `/candidat/${props.post.id}`)
+
+
+
 </script>
 
 <style scoped>
@@ -53,7 +44,7 @@ import { ref } from 'vue';
   .title{
     font-weight: 800;
   }
-  .detail{
+  .description{
     color: #838383;
     font-size: 0.8rem;
   }
@@ -61,9 +52,10 @@ import { ref } from 'vue';
     margin: 5px;
   }
 
-  button{
-    border: none;
-    cursor: pointer;
+  .details{
+    text-decoration: none;
+    color: #3032a0;
+    margin: 5px;
   }
 
   .envoye{
@@ -91,34 +83,7 @@ import { ref } from 'vue';
     border-radius: 5px;
   }
 
-  .modal {
-    position: fixed;
-    top: 0; left: 0;
-    width: 100%; height: 100%;
-    background: rgba(0,0,0,0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .modal-content {
-    background: white;
-    padding: 20px 40px;
-    border-radius: 12px;
-    h4{
-      margin-bottom: 10px;
-    };
-    button{
-      margin: 0 15px 10px 15px;
-    }
-    .close{
-      margin: 10px 160px;
-      padding: 0 20px;
-      height: 1.5rem;
-      border: 1px solid #5c5c5c5d;
-      border-radius: 8px;
-      height: 1.3rem;
-    }
-  }
+
 
 
 </style>

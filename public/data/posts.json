@@ -1,51 +1,37 @@
 [
-    {
-        "id": 1, 
-        "name": "MTN Cameroun", 
-        "description": "Développeur fullstack", 
-        "creationDate": "2026-07-12T15:32:00Z", 
-        "statut": "refuse" 
-    },
-    {
-        "id": 2, 
-        "name": "MTN Cameroun 2", 
-        "description": "Développeur fullstack", 
-        "creationDate": "2026-06-30T12:04:00Z", 
-        "statut": "accepte" 
-    },
-    {
-        "id": 3, 
-        "name": "MTN Cameroun 2", 
-        "description": "Développeur fullstack", 
-        "creationDate": "2026-06-12T12:04:00Z", 
-        "statut": "envoye" 
-    },
-    {
-        "id": 4,
-        "name": "MTN Cameroun",
-        "description": "Développeur fullstack",
-        "creationDate": "2024-07-01T10:00:00Z",
-        "statut": "refuse"
-    },
-    {
-        "id": 5, 
-        "name": "MTN Cameroun 2", 
-        "description": "Développeur fullstack", 
-        "creationDate": "2026-07-28T18:07:00Z", 
-        "statut": "entretien" 
-    },
-    {
-        "id": 6,
-        "name": "Orange Cameroun",
-        "description": "Développeur frontend",
-        "creationDate": "2024-07-02T14:30:00Z",
-        "statut": "accepte"
-    },
-    {
-        "id": 7,
-        "name": "Nexttel",
-        "description": "Développeur backend",
-        "creationDate": "2024-07-03T09:15:00Z",
-        "statut": "envoye"
-    }
+  {
+    "id": 1,
+    "name": "MTN Cameroun",
+    "description": "Développeur frontend",
+    "creationDate": "2024-08-01T10:00:00Z",
+    "statut": "envoye"
+  },
+  {
+    "id": 2,
+    "name": "Orange Cameroun",
+    "description": "Chef de projet IT",
+    "creationDate": "2024-08-02T09:30:00Z",
+    "statut": "entretien"
+  },
+  {
+    "id": 3,
+    "name": "Camtel",
+    "description": "Administrateur bases de données",
+    "creationDate": "2024-08-03T14:15:00Z",
+    "statut": "accepte"
+  },
+  {
+    "id": 4,
+    "name": "UBA Cameroun",
+    "description": "Chargé de clientèle",
+    "creationDate": "2024-08-04T11:45:00Z",
+    "statut": "refuse"
+  },
+  {
+    "id": 5,
+    "name": "Camrail",
+    "description": "Technicien support informatique",
+    "creationDate": "2024-08-05T08:20:00Z",
+    "statut": "envoye"
+  }
 ]

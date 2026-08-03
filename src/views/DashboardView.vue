@@ -78,6 +78,7 @@ import { computed } from 'vue';
     padding: 10px 40px 20px 40px;
     margin: 30px auto;
     border-radius: 12px;
+    border: 1px solid #5c5c5c5d;
     div{
       margin-top: 20px;
       div{

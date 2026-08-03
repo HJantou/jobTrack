@@ -8,8 +8,8 @@ import { ref } from 'vue';
 <template>
   <main>
     <nav>
-      <router-link to="/" class="link" :class="dash" @click="dash = 'dash', cand = ''">Dashboard</router-link>
-      <router-link to="/candidat" class="link" :class="cand" @click="dash='', cand = 'cand'" >Candidat</router-link>
+      <RouterLink to="/" class="link" :class="dash" @click="dash = 'dash', cand = ''">Dashboard</RouterLink>
+      <RouterLink to="/candidat" class="link" :class="cand" @click="dash='', cand = 'cand'" >Candidat</RouterLink>
     </nav>
 
     <RouterView/>
